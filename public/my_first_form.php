@@ -31,11 +31,11 @@
         <form method="POST">
             <p>
                <label for="to">To :</label>
-               <input id="to" name="to" type="text">
+               <input id="to" name="to" type="email">
             </p>  
             <p> 
                 <label for="from">From :</label> 
-                <input id="from" name="from" type="text">
+                <input id="from" name="from" type="email">
             </p>
             <p>
                 <label for="subject">Subject</label>
