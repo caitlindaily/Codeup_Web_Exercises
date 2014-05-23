@@ -53,6 +53,7 @@
                 <button type="submit">Send</button>
             </p>      
         </form>
+
         <form method="POST">
     <h2>Multiple Choice Questionaire</h2>    
         <p>Is Codeup awesome?
@@ -71,7 +72,8 @@
             <input id="language2" name="l2" type="checkbox"><label for="language2">Javascript<br></label> 
             <input id="language3" name="l3" type="checkbox"><label for="language3">.NET<br></label>
             <input id="language4" name="l4" type="checkbox"><label for="language4">HTML<br></label> 
-
+            
+            <button type="submit">Submit</button>
         </form>
 </body>
 </html>
