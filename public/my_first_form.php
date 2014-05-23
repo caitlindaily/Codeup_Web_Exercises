@@ -46,8 +46,32 @@
                 <textarea name="body" cols="120" rows="10"></textarea>
             </p>  
             <p>
+                <label for="sent_folder">Would you like to save to sent folder</label>
+                <input id="sent_folder" name="sent_folder" type="checkbox" checked>
+            </p>
+            <p>
                 <button type="submit">Send</button>
             </p>      
+        </form>
+        <form method="POST">
+    <h2>Multiple Choice Questionaire</h2>    
+        <p>Is Codeup awesome?
+            <label for="codeup">Duh<input id="codeup" name="codeup" type="radio" value="yes">
+            <label for="codeup">Heck no<input id="codeup2" name="codeup" type="radio" value="no">
+        </p>
+        <p>What is your favorite season?
+            <label for="season1">Spring<input id="season1" name="season" type="radio">
+            <label for="season2">Summer<input id="season2" name="season" type="radio">    
+            <label for="season3">Autumn<input id="season3" name="season" type="radio">    
+            <label for="season4">Winter<input id="season4" name="season" type="radio">
+
+        </p> 
+        <p>What languages are you familiar with?</p>
+            <input id="language1" name="l1" type="checkbox"><label for="language1">PHP<br></label>
+            <input id="language2" name="l2" type="checkbox"><label for="language2">Javascript<br></label> 
+            <input id="language3" name="l3" type="checkbox"><label for="language3">.NET<br></label>
+            <input id="language4" name="l4" type="checkbox"><label for="language4">HTML<br></label> 
+
         </form>
 </body>
 </html>
