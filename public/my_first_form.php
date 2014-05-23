@@ -73,7 +73,28 @@
             <input id="language3" name="l3" type="checkbox"><label for="language3">.NET<br></label>
             <input id="language4" name="l4" type="checkbox"><label for="language4">HTML<br></label> 
             
+             <label for="colors">What are your favorite colors?</label>
+            <select id="color" name="color[]" multiple>
+                <option value="yellow">Yellow</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="orange">Orange</option>
+                <option value="purple">Purple</option>
+                <option value="red">Red</option>
+                <option value="pink">Pink</option>
+            </select>
+           
             <button type="submit">Submit</button>
         </form>
+        <form method="POST">
+        <h2>Select Testing</h2> 
+            <label for="programmer">Are you a programmer?</label>
+            <select id="programmer" name="programmer">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+                <option value="2">Trying to be</option>
+            </select><br>
+            <button type="submit">Submit</button>    
+        </form>   
 </body>
 </html>
