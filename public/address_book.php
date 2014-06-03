@@ -1,62 +1,46 @@
 <?php
-
-$addressBook = [];
-$filename = 'address_book.csv';
-$newAddress = [];
-
-function read($filename) 
+class AddressDataStore 
 {
-	$entries = [];
-	$handle = fopen($filename, 'r');
-	while (!feof($handle)) {
-		$row = fgetcsv($handle);
-		if(is_array($row)) {
-			$entries[] = $row;
+
+	public $addressBook = [];
+	public $filename = 'address_book.csv';
+	public $newAddress = [];
+
+	public function read() 
+	{
+		$entries = [];
+		$handle = fopen($this->filename, 'r');
+		while (!feof($handle)) {
+			$row = fgetcsv($handle);
+			if(is_array($row)) {
+				$entries[] = $row;
+			}
 		}
+		fclose($handle);
+		return $entries;
 	}
-	fclose($handle);
-	return $entries;
+
+	public function write($newArray) 
+	{  
+	    $handle = fopen($this->filename, 'w');
+	    foreach ($newArray as $fields) {
+			fputcsv($handle, $fields);
+		}
+		fclose($handle);
+	}
 }
 
-function write($newArray, $filename) 
-{  
-    $handle = fopen($filename, 'w');
-    foreach ($newArray as $fields) {
-		fputcsv($handle, $fields);
-	}
-	fclose($handle);
-}
+$addressDataStore = new AddressDataStore();
+$addressBook = $addressDataStore->read();
 
-$addressBook = read($filename);
 
 if (!empty($_POST)) {
 	foreach($_POST as $value) {
 		$newAddress[] = $value;
 	}
 	array_push($addressBook, $newAddress);
-	write($addressBook, $filename);
+	$addressDataStore->write($addressBook);
 }
-// if (!empty($_POST)) {
-// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['name']));
-// }
-// if (!empty($_POST)) {
-// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['address']));	
-// }
-// if (!empty($_POST)) {
-// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['city']));
-// }		
-// if (!empty($_POST)) {
-// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['state']));
-// }
-// if (!empty($_POST)) {
-// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['zipcode']));
-// }
-// if (!empty($_POST)) {
-// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['phone']));
-// }
-
-
-
 
 var_dump($_POST);
 ?>
