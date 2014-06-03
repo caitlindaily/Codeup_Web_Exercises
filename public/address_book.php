@@ -1,31 +1,63 @@
 <?php
 
 $addressBook = [];
-function store_entry($addressBook) 
+$filename = 'address_book.csv';
+$newAddress = [];
+
+function read($filename) 
+{
+	$entries = [];
+	$handle = fopen($filename, 'r');
+	while (!feof($handle)) {
+		$row = fgetcsv($handle);
+		if(is_array($row)) {
+			$entries[] = $row;
+		}
+	}
+	fclose($handle);
+	return $entries;
+}
+
+function write($newArray, $filename) 
 {  
-    $handle = fopen('address_book.csv', 'a');
-   	fputcsv($handle, $addressBook);
-    fclose($handle);
+    $handle = fopen($filename, 'w');
+    foreach ($newArray as $fields) {
+		fputcsv($handle, $fields);
+	}
+	fclose($handle);
 }
 
+$addressBook = read($filename);
 
 if (!empty($_POST)) {
-	$addressBook[]; = htmlspecialchars(strip_tags($_POST['name']));
+	foreach($_POST as $value) {
+		$newAddress[] = $value;
+	}
+	array_push($addressBook, $newAddress);
+	write($addressBook, $filename);
 }
-if (!empty($_POST)) {
-	$addressBook[] = htmlspecialchars(strip_tags($_POST['address']));	
-}
-if (!empty($_POST)) {
-	$addressBook[] = htmlspecialchars(strip_tags($_POST['state']));
-}
-if (!empty($_POST)) {
-	$addressBook[] = htmlspecialchars(strip_tags($_POST['zipcode']));
-}
-if (!empty($_POST)) {
-	$addressBook[] = htmlspecialchars(strip_tags($_POST['phone']));
-}
+// if (!empty($_POST)) {
+// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['name']));
+// }
+// if (!empty($_POST)) {
+// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['address']));	
+// }
+// if (!empty($_POST)) {
+// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['city']));
+// }		
+// if (!empty($_POST)) {
+// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['state']));
+// }
+// if (!empty($_POST)) {
+// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['zipcode']));
+// }
+// if (!empty($_POST)) {
+// 	$newAddress[] = htmlspecialchars(strip_tags($_POST['phone']));
+// }
 
-store_entry($addressBook);
+
+
+
 var_dump($_POST);
 ?>
 
@@ -35,14 +67,19 @@ var_dump($_POST);
 	<title>Address Book</title>
 </head>
 <body>
+	<table>
+		<? foreach ($addressBook as $entry) : ?>
+		<tr>
+			<? foreach ($entry as $value) :?>
+				<td><?=$value;?></td>
+			<? endforeach; ?>	
+		</tr>
+		<? endforeach; ?>
+	</table>
 <form method="POST">
 	<h1>Address Book</h1>
 	<p>
-		<table>
-			<? foreach ($addressBook as $entry) : ?>
-			<?= "<tr><th>$entry</th></tr>"; ?>
-			<? endforeach; ?>	
-		</table>	
+			
 	</p>
 	<p>
 		<p>
