@@ -4,7 +4,7 @@ $addressBook = [];
 $errorMessage = '';
 
 //Refers to class file that reads and writes files
-include('classes/address_data_store.php');
+require_once('classes/address_data_store.php');
 
 $ads = new AddressDataStore();
 $addressBook = $ads->read();
