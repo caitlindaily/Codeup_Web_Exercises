@@ -43,17 +43,19 @@ $ads = new AddressDataStore();
 $addressBook = $ads->read();
 
 if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
-	if ($_FILES['file1']['type'] == 'text/plain') {
+	if ($_FILES['file1']['type'] == 'text/csv') {
 		$upload_directory = '/vagrant/sites/codeup.dev/public/uploads/';
 		$filename = basename($_FILES['file1']['name']);
 		$saved_file = $upload_directory . $filename;
 		move_uploaded_file($_FILES['file1']['tmp_name'], $saved_file);	
 		
-		$uploaded_file = open_list($saved_file);
-		$todo_items = array_merge($todo_items, $uploaded_file);
-		save_list($todo_items);
+		$uploaded_file = new AddressDataStore($saved_file);
+		$addressUploaded = $uploaded_file->read();
+		$addressBook= array_merge($addressBook, $addressUploaded);
+		$ads->write($addressBook);
+		
 	}else {
-		echo "Please upload plain text file only.";
+		echo "Please upload csv file only.";
 	}
 }
 
