@@ -1,0 +1,65 @@
+#ribbon {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+}
+
+h1 {
+	color: #000;
+	margin-top: 10px;
+
+}
+div {
+	color: #FFF;
+	border: 1px solid #000;
+	height: 50px;
+	width: 50px;
+	padding: 10px;
+	margin: 25px;
+	position: relative;
+}
+
+div > img {
+	border: none;
+	float: right;
+	position: absolute;
+	bottom: 55px;
+	left: 50px;
+}
+
+#red {
+	background-color: #C50B13;
+	float: left;
+	margin-left: 0px;
+	
+}
+
+#orange {
+	background-color: #EC5820;
+	float: left;
+	
+}
+
+#yellow {
+	background-color: #EFF428;
+	float: left;
+}
+
+#green {
+	background-color: #62F22C;
+	float: left;
+	clear: both;
+	margin-left: 0px;
+}
+
+#blue {
+	background-color: #2236E8;
+	float: left;
+	
+}
+
+#violet {
+	background-color: #B1A0E9;
+	float: left;
+	
+}
