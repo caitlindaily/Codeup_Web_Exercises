@@ -29,10 +29,19 @@
 
 	<script>
 		
-		$('p').css('font-family', 'Cursive');
-		$('li').css('text-decoration', 'underline').css('border', 'solid 1px red');
-		$('#main-div').css('color', '#0F0').css('font-size', '50px');
-		$('#paragraph, #secondList').css('background-color', '#00F');
+		$('h1').click(function() {
+			$(this).css('background-color', '#AAA');
+		});
+
+		$('p').dblclick(function() {
+			$(this).css('font-size', '18px');
+		});
+
+		$('li').hover(function() {
+			$(this).css('color', '#F00');
+		}, function() {
+			$(this).css('color', '#000');
+		});
 
 
 	</script>
