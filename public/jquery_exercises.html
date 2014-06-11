@@ -3,11 +3,6 @@
 <head>
 	<title></title>
 	<script src="/js/jquery2.1.1.js"></script>
-	<style>
-		#main-div {
-			color: #00F;
-		}
-	</style>	
 </head>
 <body>
 	<div id="main-div" class="section">
@@ -33,8 +28,12 @@
 	
 
 	<script>
-		var $paragraph = $('#paragraph').html();
-		alert($paragraph);
+		
+		$('p').css('font-family', 'Cursive');
+		$('li').css('text-decoration', 'underline').css('border', 'solid 1px red');
+		$('#main-div').css('color', '#0F0').css('font-size', '50px');
+		$('#paragraph, #secondList').css('background-color', '#00F');
+
 
 	</script>
 
