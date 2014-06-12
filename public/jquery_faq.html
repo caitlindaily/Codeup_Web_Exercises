@@ -79,12 +79,10 @@
 			$(this).children().first().css('font-weight', 'bold');
 		});
 
-		$('li').each(function() {
-			$(this).parent().click(function(){
-				$(this).addClass('invisible');
-			})
-		});
 	
+		$('li').click(function() {
+			$(this).parent().addClass('invisible');
+		});
 	</script>
 </body>
 </html>
