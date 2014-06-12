@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="js/jquery2.1.1.js"></script>
     <title>Delayed Autosave</title>
 </head>
 <body>
@@ -10,33 +11,23 @@
 
     <script>
         
+        var timeoutId = null;
         
-        function save() 
+         function save() 
         {
             alert('Saved!');
         }
-            // todo:
-            // Use setTimeout and clearTimeout within this function
-            // so that the save() function is called 5 seconds after
-            // the last key up event. If a new key up event occurs,
-            // you need to cancel the existing timer and set a new one.
-        var timeoutId = null;
-            
-        function autosave() 
+           
+         function autosave() 
         {
-            clearTimeout(timeoutId); //Immediately reset any timers
-            timeoutId = setTimeout(function() { //Sets the timer that after 5 sec., run the save ().
+            clearTimeout(timeoutId); 
+            timeoutId = setTimeout(function() { 
                 save();
             }, 5000);
          }
         
 
-        // don't modify the line below
-        // this causes the autosave function to be called whenever
-        // a key up event occurs in the textarea
-        // we will learn about events in the DOM lessons
-        var textarea = document.getElementById('important');
-        textarea.addEventListener('keyup', autosave, false);
+        $('#important').on('keypress', autosave);
 
     </script>
 
