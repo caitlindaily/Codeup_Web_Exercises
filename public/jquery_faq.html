@@ -72,7 +72,7 @@
 		
 		$('#toggleLink').click(function() {
 			event.preventDefault();
-            $('dd').toggleClass('invisible');
+            $('dd').toggle();
             });
 
 		$('ul').each(function(){
@@ -81,7 +81,7 @@
 
 	
 		$('li').click(function() {
-			$(this).parent().addClass('invisible');
+			$(this).parent().hide();
 		});
 	</script>
 </body>
