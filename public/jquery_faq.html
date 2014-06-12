@@ -72,7 +72,7 @@
 		
 		$('#toggleLink').click(function() {
 			event.preventDefault();
-            $('dd').toggle();
+            $('dd').fadeToggle();
             });
 
 		$('ul').each(function(){
@@ -80,8 +80,8 @@
 		});
 
 	
-		$('li').click(function() {
-			$(this).parent().hide();
+		$('h3').click(function() {
+			$(this).next().fadeToggle();
 		});
 	</script>
 </body>
