@@ -47,6 +47,25 @@
 	<dt>Fact 10</dt>
 		<dd class="invisible"> The Yellowstone Caldera, in Yellowstone National Park, is a super volcano that is responsible for three of the world’s six biggest volcano eruptions. It is on pace to blow about 100,000 years from now.</dd>
 	</dl>
+
+<h2>Parks List</h2>
+	<h3>Arches</h3>	
+	<ul id="firstList">
+			<li>asdfghjklsdfghjk</li>
+			<li>dfgbhjklfgbhn</li>
+			<li>fghijhvopejd vjeeowivnew</li>
+			<li>jsdbhvisd</li>
+
+	</ul>
+	<h3>Badlands</h3>
+	<ul id="secondList">
+			
+			<li>asdfghjklsdfghjk</li>
+			<li>dfgbhjklfgbhn</li>
+			<li>fghijhvopejd vjeeowivnew</li>
+			<li>jsdbhvisd</li>
+	</ul>	
+
 	<a href="#" id="topOfPage">Top of Page</a>
 	
 	<script>
@@ -56,6 +75,16 @@
             $('dd').toggleClass('invisible');
             });
 
+		$('ul').each(function(){
+			$(this).children().first().css('font-weight', 'bold');
+		});
+
+		$('li').each(function() {
+			$(this).parent().click(function(){
+				$(this).addClass('invisible');
+			})
+		});
+	
 	</script>
 </body>
 </html>
