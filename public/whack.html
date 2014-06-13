@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Whack</title>
+	<title>Whack-A-Newbie</title>
 	<link rel="stylesheet" href="css/whack.css"></script>
 </head>
 <body>
-	
+	<h2>Whack-A-Newbie</h2>
 	
 	<div id="main-div">
 		<div id="box1" class="box"><img id="img1"style="display:none;" src="img/scrubs.jpg"></div>
@@ -24,85 +24,19 @@
 <script src="js/jquery2.1.1.js"></script>
  <script>
 
+var timer = setInterval(function() {random()},3000);
  	
- 	var random = Math.floor((Math.random() * 9) + 1);
-console.log(random);
+ function random() {
 
-
-
-	switch (random) {
-		case 1:
-			$('#img1').fadeIn(1000);
-			$('#img1').click(function() {
-				$(this).fadeOut();
-			})
-			break;
-	
-		case 2:
-			$('#img2').fadeIn(1000);
-			$('#img2').click(function() {
-				$(this).fadeOut();
-			})
-			break;
-	
-		case 3:
-			$('#img3').fadeIn(1000);
-			$('#img3').click(function() {
-				$(this).fadeOut();
-			})
-			break;
-	
-		case 4:
-			$('#img4').fadeIn(1000);
-			$('#img4').click(function() {
-				$(this).fadeOut();
-			})
-			break;
-	
-		case 5:
-			$('#img5').fadeIn(1000);
-			$('#img5').click(function() {
-				$(this).fadeOut();
-			})
-			break;
-
-		case 6:
-			$('#img6').fadeIn(1000);
-			$('#img6').click(function() {
-				$(this).fadeOut();
-			})
-			break;
-	
-		case 7:
-			$('#img7').fadeIn(1000);
-			$('#img7').click(function() {
-				$(this).fadeOut();
-			})
-			break;
-
-		case 8:
-			$('#img8').fadeIn(1000);
-			$('#img8').click(function() {
-				$(this).fadeOut();
-			});
-			break;
-	
-		case 9:
-			$('#img9').fadeIn(1000);
-			$('#img9').click(function() {
-				$(this).fadeOut();
-			});
-			break;
-	}
-
-
-
-
-	// 	$('img').fadeIn(1000);
-	// 	$('img').click(function() {
-	// 		$(this).fadeOut();
-	// 	});
-
+ 	$('img').fadeOut();
+ 	
+ 	var randNum = Math.floor(Math.random() * 8);
+ 	// console.log(randNum);
+ 	$('.box').eq(randNum).children('img').fadeIn();
+ 	$('img').click(function(){
+ 		$(this).remove();
+ 		});
+ }
 
 	</script>
 </body>
