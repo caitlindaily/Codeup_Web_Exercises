@@ -1,0 +1,25 @@
+.box{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border: solid 1px;
+	float: left;
+}
+
+#box4 {
+	clear: both;
+	
+}
+#box7 {
+	clear: both;
+	
+}
+#main-div {
+	margin-left: 275px;
+	margin-top: 40px;
+}
+img {
+	cursor: pointer;
+	height: 150px;
+	width: 150px;
+}
