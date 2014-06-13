@@ -5,7 +5,10 @@
 	<link rel="stylesheet" href="css/whack.css"></script>
 </head>
 <body>
+
+
 	<h2>Whack-A-Newbie</h2>
+	<h3>Score</h3>
 	
 	<div id="main-div">
 		<div id="box1" class="box"><img id="img1"style="display:none;" src="img/scrubs.jpg"></div>
@@ -31,10 +34,10 @@ var timer = setInterval(function() {random()},3000);
  	$('img').fadeOut();
  	
  	var randNum = Math.floor(Math.random() * 8);
- 	// console.log(randNum);
+ 	console.log(randNum);
  	$('.box').eq(randNum).children('img').fadeIn();
  	$('img').click(function(){
- 		$(this).remove();
+ 		$(this).hide();
  		});
  }
 
