@@ -16,10 +16,28 @@
 }
 #main-div {
 	margin-left: 275px;
-	margin-top: 40px;
+	margin-top: 10px;
 }
 img {
 	cursor: pointer;
 	height: 150px;
 	width: 150px;
 }
+h2 {
+	text-align: center;
+}
+h3 {
+	text-decoration: underline;
+	text-align: center;
+}
+#score {
+	background-color: #0F0;
+	height: 20px;
+	width: 40px;
+
+}
+
+
+
+
+

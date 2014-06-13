@@ -9,6 +9,7 @@
 
 	<h2>Whack-A-Newbie</h2>
 	<h3>Score</h3>
+	<div id="score" ></div>
 	
 	<div id="main-div">
 		<div id="box1" class="box"><img id="img1"style="display:none;" src="img/scrubs.jpg"></div>
@@ -27,8 +28,9 @@
 <script src="js/jquery2.1.1.js"></script>
  <script>
 
-var timer = setInterval(function() {random()},3000);
- 	
+var timer = setInterval('random()',3000);
+var counter = 0; 
+
  function random() {
 
  	$('img').fadeOut();
@@ -36,10 +38,15 @@ var timer = setInterval(function() {random()},3000);
  	var randNum = Math.floor(Math.random() * 8);
  	console.log(randNum);
  	$('.box').eq(randNum).children('img').fadeIn();
- 	$('img').click(function(){
- 		$(this).hide();
- 		});
+ 	
  }
+
+ $('img').click(function(){
+ 		counter += 1;
+ 		$('#score').html(counter);
+ 		$(this).hide();
+ 	});
+
 
 	</script>
 </body>
