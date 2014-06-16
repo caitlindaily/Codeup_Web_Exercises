@@ -1,3 +1,6 @@
+body {
+	background-image: url("/img/drcox.jpg");
+}
 .box{
 	position: relative;
 	width: 150px;
@@ -5,7 +8,6 @@
 	border: solid #00677F 1px;
 	float: left;
 }
-
 #box4 {
 	clear: both;
 	
@@ -18,7 +20,9 @@
 	margin-left: 100px;
 	margin-top: 0px;
 }
-img {
+.boximage {
+	background-image: url("/img/scrubs.jpg");
+	background-repeat: no-repeat;
 	cursor: pointer;
 	height: 150px;
 	width: 150px;
@@ -44,7 +48,6 @@ h3 {
 	width: 40px;
 	margin-left: 320px;
 	content: center;
-
 }
 
 

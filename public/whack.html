@@ -5,50 +5,42 @@
 	<link rel="stylesheet" href="css/whack.css"></script>
 	<link href='http://fonts.googleapis.com/css?family=Life+Savers:400,700' rel='stylesheet' type='text/css'>
 </head>
-<body background="img/drcox.jpg">
-
-
+<body>
 	<h2>Whack-A-Newbie</h2>
 	<h3>Score</h3>
 	<div id="score" ></div>
 	
 	<div id="main-div">
-		<div id="box1" class="box"><img id="img1"style="display:none;" src="img/scrubs.jpg"></div>
-		<div id="box2" class="box"><img id="img2"style="display:none;" src="img/scrubs.jpg"></div>
-		<div id="box3" class="box"><img id="img3"style="display:none;" src="img/scrubs.jpg"></div>
-		<div id="box4" class="box"><img id="img4"style="display:none;" src="img/scrubs.jpg"></div>
-		<div id="box5" class="box"><img id="img5"style="display:none;" src="img/scrubs.jpg"></div>
-		<div id="box6" class="box"><img id="img6"style="display:none;" src="img/scrubs.jpg"></div>
-		<div id="box7" class="box"><img id="img7"style="display:none;" src="img/scrubs.jpg"></div>
-		<div id="box8" class="box"><img id="img8"style="display:none;" src="img/scrubs.jpg"></div>
-		<div id="box9" class="box"><img id="img9"style="display:none;" src="img/scrubs.jpg"></div>
+		<div id="box1" class="box"><img class="boximage"style="display:none;"></div>
+		<div id="box2" class="box"><img class="boximage"style="display:none;"></div>
+		<div id="box3" class="box"><img class="boximage"style="display:none;"></div>
+		<div id="box4" class="box"><img class="boximage"style="display:none;"></div>
+		<div id="box5" class="box"><img class="boximage"style="display:none;"></div>
+		<div id="box6" class="box"><img class="boximage"style="display:none;"></div>
+		<div id="box7" class="box"><img class="boximage"style="display:none;"></div>
+		<div id="box8" class="box"><img class="boximage"style="display:none;"></div>
+		<div id="box9" class="box"><img class="boximage"style="display:none;"></div>
 	</div>	
 
-
-
 <script src="js/jquery2.1.1.js"></script>
- <script>
+<script>
 
-var timer = setInterval('random()',3000);
+var timer = setInterval('random()',1000);
 var counter = 0; 
 
- function random() {
+function random() {
 
- 	$('img').fadeOut();
- 	
- 	var randNum = Math.floor(Math.random() * 8);
- 	console.log(randNum);
- 	$('.box').eq(randNum).children('img').fadeIn();
- 	
- }
+	$('.boximage').fadeOut();
+	var randNum = Math.floor(Math.random() * 8);
+	$('.box').eq(randNum).children('.boximage').fadeIn();
+}
 
- $('img').click(function(){
- 		counter += 1;
- 		$('#score').html(counter);
- 		$(this).hide();
- 	});
+$('.boximage').click(function(){
+	counter += 1;
+	$('#score').html(counter);
+	$(this).hide();
+});
 
-
-	</script>
+</script>
 </body>
 </html>
