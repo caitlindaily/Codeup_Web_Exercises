@@ -1,12 +1,12 @@
 <?php
 
 //Refers to class file that reads and writes files
-require_once('classes/address_data_store.php');
+require_once('classes/filestore.php');
 
 $addressBook = [];
-$errorMessage = '';
+$newAddress = [];
 
-$ads = new AddressDataStore();
+$ads = new Filestore('address_book.csv');
 $addressBook = $ads->read();
 
 if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
@@ -16,9 +16,9 @@ if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
 		$saved_file = $upload_directory . $filename;
 		move_uploaded_file($_FILES['file1']['tmp_name'], $saved_file);	
 		
-		$uploaded_file = new AddressDataStore($saved_file);
+		$uploaded_file = new Filestore($saved_file);
 		$addressUploaded = $uploaded_file->read();
-		$addressBook= array_merge($addressBook, $addressUploaded);
+		$addressBook = array_merge($addressBook, $addressUploaded);
 		$ads->write($addressBook);
 		
 	}else {
