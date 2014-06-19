@@ -1,10 +1,10 @@
 <?php
 
-$addressBook = [];
-$errorMessage = '';
-
 //Refers to class file that reads and writes files
 require_once('classes/address_data_store.php');
+
+$addressBook = [];
+$errorMessage = '';
 
 $ads = new AddressDataStore();
 $addressBook = $ads->read();
@@ -43,8 +43,6 @@ if(isset($_GET['index']))
 	header('Location: /address_book.php');
 	exit(0);
 }
-
-var_dump($_POST);
 
 ?>
 
