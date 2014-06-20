@@ -1,5 +1,6 @@
 <?php
 
+class InvalidInputException extends Exception{};
 //Refers to class file that reads and writes files
 require_once('classes/filestore.php');
 
@@ -30,14 +31,14 @@ try {
 	if (!empty($_POST)) {
 		foreach($_POST as $value) {
 			if(strlen($value) > 30) {
-				throw new Exception("Characters cannot exceed 25 characters.");
+				throw new InvalidInputException("Characters cannot exceed 25 characters.");
 			} 
 			$newAddress[] = $value;
 		}
 		array_push($addressBook, $newAddress);
 		$ads->write($addressBook);
 	}
-} catch (Exception $e) {
+} catch (InvalidInputException $e) {
 	$msg = $e->getMessage() . PHP_EOL;
 }	
 
