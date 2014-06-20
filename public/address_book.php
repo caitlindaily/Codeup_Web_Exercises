@@ -26,16 +26,20 @@ if (count($_FILES) > 0 && $_FILES['file1']['error'] == 0) {
 	}
 }
 
-if (!empty($_POST)) {
-	foreach($_POST as $value) {
-		if(strlen($value) > 30) {
-			throw new Exception("Characters cannot exceed 25 characters.");
-		} 
-		$newAddress[] = $value;
+try {
+	if (!empty($_POST)) {
+		foreach($_POST as $value) {
+			if(strlen($value) > 30) {
+				throw new Exception("Characters cannot exceed 25 characters.");
+			} 
+			$newAddress[] = $value;
+		}
+		array_push($addressBook, $newAddress);
+		$ads->write($addressBook);
 	}
-	array_push($addressBook, $newAddress);
-	$ads->write($addressBook);
-}
+} catch (Exception $e) {
+	echo $e->getMessage() . PHP_EOL;
+}	
 
 if(isset($_GET['index']))
 {
