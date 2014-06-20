@@ -38,7 +38,7 @@ try {
 		$ads->write($addressBook);
 	}
 } catch (Exception $e) {
-	echo $e->getMessage() . PHP_EOL;
+	$msg = $e->getMessage() . PHP_EOL;
 }	
 
 if(isset($_GET['index']))
@@ -59,6 +59,9 @@ if(isset($_GET['index']))
 	<title>Address Book</title>
 </head>
 <body>
+	<? if(isset($msg)) : ?>
+		<h2><?= $msg; ?></h2>
+	<? endif; ?>	
 	<table>
 		<tr>
 		   <th>Name</th>
