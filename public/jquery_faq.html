@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="js/jquery2.1.1.js"></script>
-	<style>
-		body {
-			background-color: #9EFF97;
-		}
-		h1 {
-			text-align: center;
-		}
-		.invisible {
-			display: none;
-		}
-		dt {
-			text-decoration: underline;
-			color: #8C522A;
-		}
+<script src="js/jquery2.1.1.js"></script>
+  <style>
+	body {
+	  background-color: #9EFF97;
+	}
+	h1 {
+	  text-align: center;
+	}
+	.invisible {
+	  display: none;
+	}
+	dt {
+	  text-decoration: underline;
+	  color: #8C522A;
+	}
+  </style>
 
-	
-	</style>
-
-	<title>10 FAQ's About National Parks</title>
+<title>10 FAQ's About National Parks</title>
 </head>
 <body>
 	<h1>10 FAQ's About National Parks</h1>
@@ -49,40 +47,39 @@
 	</dl>
 
 <h2>Parks List</h2>
-	<h3>Arches</h3>	
+  <h3>Arches</h3>	
 	<ul id="firstList">
-			<li>asdfghjklsdfghjk</li>
-			<li>dfgbhjklfgbhn</li>
-			<li>fghijhvopejd vjeeowivnew</li>
-			<li>jsdbhvisd</li>
-
+	  <li>asdfghjklsdfghjk</li>
+	  <li>dfgbhjklfgbhn</li>
+	  <li>fghijhvopejd vjeeowivnew</li>
+	  <li>jsdbhvisd</li>
 	</ul>
-	<h3>Badlands</h3>
+  <h3>Badlands</h3>
 	<ul id="secondList">
-			
-			<li>asdfghjklsdfghjk</li>
-			<li>dfgbhjklfgbhn</li>
-			<li>fghijhvopejd vjeeowivnew</li>
-			<li>jsdbhvisd</li>
+	  <li>asdfghjklsdfghjk</li>
+      <li>dfgbhjklfgbhn</li>
+      <li>fghijhvopejd vjeeowivnew</li>
+      <li>jsdbhvisd</li>
 	</ul>	
 
 	<a href="#" id="topOfPage">Top of Page</a>
 	
-	<script>
-		
-		$('#toggleLink').click(function() {
-			event.preventDefault();
-            $('dd').slideToggle();
-            });
+<script>
 
-		$('ul').each(function(){
-			$(this).children().first().css('font-weight', 'bold');
-		});
+$('#toggleLink').click(function() {
+  event.preventDefault();
+   $('dd').slideToggle();
+});
 
-	
-		$('h3').click(function() {
-			$(this).next().slideToggle();
-		});
-	</script>
+$('ul').each(function(){
+  $(this).children().first().css('font-weight', 'bold');
+});
+
+
+$('h3').click(function() {
+  $(this).next().slideToggle();
+});
+
+</script>
 </body>
 </html>
